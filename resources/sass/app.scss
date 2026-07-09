@@ -1,0 +1,21 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Bootstrap (must be imported first to use its variables)
+@import 'bootstrap/scss/bootstrap';
+
+// Custom Variables (Override Bootstrap defaults here)
+@import 'variables';
+
+.btn-outline {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.2s ease;
+}
+
+.btn-outline:hover {
+    opacity: 1;
+}
+
+// Bootstrap Icons (Optional, if you want to use them)
+// @import "bootstrap-icons/icons/bootstrap-icons.svg";

@@ -1,0 +1,44 @@
+// Color palette
+$white:                     #fff;
+$gray-100:                  #f8f9fa;
+
+$primary:       #FF7F00; // Orange
+$secondary:     #6c757d; // Grey (default Bootstrap secondary)
+$success:       #28a745; // Green (default Bootstrap success)
+$info:          #17a2b8; // Cyan (default Bootstrap info)
+$warning:       #ffc107; // Yellow (default Bootstrap warning)
+$danger:        #dc3545; // Red (default Bootstrap danger)
+$light:         #f8f9fa; // Light grey (default Bootstrap light)
+$dark:          #212529; // Dark grey (default Bootstrap dark)
+
+// Custom variables
+$body-bg:                   #F5F5F5;
+$body-color:                $dark;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+$font-family-sans-serif:      "Nunito", sans-serif;
+
+// Navbar
+$navbar-dark-color:                 rgba($white, .8);
+$navbar-dark-hover-color:           $white;
+$navbar-dark-active-color:          $white;
+$navbar-dark-brand-color:           $white;
+$navbar-dark-brand-hover-color:     $white;
+
+// Buttons
+$btn-border-radius:           .5rem;
+$btn-border-radius-sm:        .3rem;
+$btn-border-radius-lg:        .8rem;
+
+// Cards
+$card-border-radius:          .75rem;
+
+// Forms
+$input-border-radius:         .5rem;
