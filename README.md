@@ -47,7 +47,7 @@ Sistem Point of Sale berbasis web untuk UMKM (Usaha Mikro, Kecil, dan Menengah).
 ### Manajemen Pengguna
 - Role & Permission (Owner, Admin, Kasir)
 - CRUD pengguna (Owner only)
-- Login & Logout (fitur register dan forgot password tidak tersedia)
+- Login & Logout 
 
 ### Pengaturan
 - Nama toko, alamat, telepon
