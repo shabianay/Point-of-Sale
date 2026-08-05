@@ -47,7 +47,7 @@ Sistem Point of Sale berbasis web untuk UMKM (Usaha Mikro, Kecil, dan Menengah).
 ### Manajemen Pengguna
 - Role & Permission (Owner, Admin, Kasir)
 - CRUD pengguna (Owner only)
-- Login, Logout, Register
+- Login & Logout (fitur register dan forgot password tidak tersedia)
 
 ### Pengaturan
 - Nama toko, alamat, telepon
@@ -136,9 +136,32 @@ Sistem Point of Sale berbasis web untuk UMKM (Usaha Mikro, Kecil, dan Menengah).
 
 | Role | Email | Password |
 |------|-------|----------|
-| Owner | owner@pos.com | password |
-| Admin | admin@pos.com | password |
-| Kasir | kasir@pos.com | password |
+| Owner | owner@pos.test | password |
+| Admin | admin@pos.test | password |
+| Kasir | kasir@pos.test | password |
+
+## Testing
+
+Test ditulis menggunakan **PHPUnit** dan berjalan pada database terpisah agar tidak mengganggu data pengembangan.
+
+1. **Buat database test** (pada MySQL / MariaDB)
+   ```sql
+   CREATE DATABASE pos_app_test CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+   ```
+
+2. **Jalankan seluruh test**
+   ```bash
+   php artisan test
+   ```
+
+3. **Jalankan test tertentu**
+   ```bash
+   php artisan test --filter=PosControllerTest
+   ```
+
+Kredensial database test dikonfigurasi di `phpunit.xml` (default: `pos_app_test`, user `root`, tanpa password). Setiap test memakai `RefreshDatabase`, jadi tabel dimigrasi ulang secara otomatis. Role, permission, pengguna, dan pengaturan toko dibuat di dalam base test case (`tests/Feature/AuthTestCase.php`).
+
+Cakupan test: autentikasi & otorisasi peran (Owner/Admin/Kasir), dashboard, kategori, produk, POS (checkout, stok, auto-nonaktif produk habis), manajemen stok (restock & opname), transaksi (void mengembalikan stok), laporan, pengaturan toko, dan manajemen pengguna.
 
 ## Struktur Folder
 
@@ -158,7 +181,7 @@ pos-app/
 │   ├── css/              # Custom CSS
 │   ├── sass/             # SCSS (variables, app)
 │   └── views/
-│       ├── auth/         # Login, register
+│       ├── auth/         # Login (register & forgot password dihapus)
 │       ├── layouts/      # Layout utama
 │       ├── pos/          # Halaman POS
 │       ├── products/     # Manajemen produk

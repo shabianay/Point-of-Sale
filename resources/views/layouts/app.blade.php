@@ -1704,9 +1704,21 @@
             color: var(--text-primary);
             letter-spacing: -.02em
         }
+.auth-c-b .field {
+            margin-bottom: 18px
+        }
+
+        .auth-c-b .field:last-of-type {
+            margin-bottom: 0
+        }
+
+        .auth-c-b .chk {
+            margin-top: 4px
+        }
 
         .auth-c-b {
-            padding: clamp(16px, 3vw, 20px) clamp(20px, 3vw, 28px) clamp(20px, 3vw, 28px)
+            padding: clamp(16px, 3vw, 20px) clamp(20px, 3vw, 28px) 
+clamp(20px, 3vw, 28px)
         }
 
         .auth-c .btn-p {
@@ -2333,9 +2345,11 @@
                 gap: 28px
             }
 
+            @auth
             .auth-w {
                 margin-left: var(--sidebar-w)
             }
+            @endauth
 
             .grid-4 {
                 grid-template-columns: repeat(4, 1fr);
@@ -2421,6 +2435,7 @@
 
 <body>
     <div class="app">
+        @auth
         <div class="overlay" id="overlay"></div>
         <aside class="sidebar" id="sidebar" role="navigation" aria-label="Sidebar navigation">
             <div class="sidebar-logo">
@@ -2539,8 +2554,10 @@
                 </a>
             </div>
         </aside>
+        @endauth
 
         <div class="app-main">
+            @auth
             <div class="mob-head">
                 <button class="ham" id="ham" aria-label="Toggle navigation menu" type="button">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -2554,6 +2571,7 @@
                 </div>
                 <div class="mob-title">{{ $store->store_name ?? config('app.name') }}</div>
             </div>
+            @endauth
 
             <main class="main" id="main">
                 @if (session('success'))
